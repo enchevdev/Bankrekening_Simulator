@@ -2,23 +2,28 @@
 {
     internal class Program
     {
+
         static void Main(string[] args)
         {
-            string naam = "";
-            int saldo = 0;
 
+            Bankrekening bankrekening = new Bankrekening();
 
             Console.WriteLine("Wat is je naam?");
 
-            naam = Console.ReadLine();
+            bankrekening.naam = Console.ReadLine();
 
             Console.WriteLine("Wat is je saldo?");
 
-            saldo = int.Parse(Console.ReadLine());
+            bankrekening.saldo = int.Parse(Console.ReadLine());
 
 
-            Console.WriteLine("Hallo, " + naam + "! Je saldo is: " + saldo);
+            Console.WriteLine("Hallo, " + bankrekening.naam + "! Je saldo is: " + bankrekening.saldo);
+
+
+
 
         }
     }
+      
 }
+    
