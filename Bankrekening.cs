@@ -15,6 +15,18 @@ namespace Bankrekening_Simulator
             saldo += bedrag;
         }
 
+        public void Opnemen(int bedrag)
+        {
+            if (saldo >= bedrag)
+            {
+                saldo -= bedrag;
+                Console.WriteLine("Je hebt " + saldo + " euro op je rekening.");
+            }
+            else
+            {
+                Console.WriteLine("Je hebt niet genoeg geld op je rekening.");
+            }
 
+        }
     }
 }

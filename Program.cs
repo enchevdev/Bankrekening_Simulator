@@ -16,11 +16,17 @@
 
             bankrekening.saldo = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("Hoeveel wil je storen op je saldo?");
+            Console.WriteLine("Hoeveel wil je storten op je saldo?");
 
             int bedrag = int.Parse(Console.ReadLine());
 
             bankrekening.Storten(bedrag);
+
+            Console.WriteLine("Hoeveel wil je opnemen?");
+
+            int opnamebedrag = int.Parse(Console.ReadLine());
+
+            bankrekening.Opnemen(opnamebedrag);
 
             Console.WriteLine("Hallo, " + bankrekening.naam + "! Je saldo is: " + bankrekening.saldo);
         }
