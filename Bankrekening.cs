@@ -17,6 +17,7 @@ namespace Bankrekening_Simulator
 
         public void Opnemen(int bedrag)
         {
+
             if (saldo >= bedrag)
             {
                 saldo -= bedrag;
