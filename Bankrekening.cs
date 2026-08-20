@@ -8,5 +8,13 @@ namespace Bankrekening_Simulator
     {
         public string naam { get; set; }
         public int saldo { get; set; }
+
+
+        public void Storten(int bedrag)
+        {
+            saldo += bedrag;
+        }
+
+
     }
 }
