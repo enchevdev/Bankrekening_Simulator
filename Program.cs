@@ -29,6 +29,12 @@
                     Console.WriteLine("Ongeldige invoer. Voer een geldig getal in.");
                     continue;
                 }
+
+                if (bankrekening.saldo < 0)
+                {
+                    Console.WriteLine("Ongeldig bedrag. Voer een bedrag van 0 of hoger in.");
+                    geldigeInvoer = false;
+                }
             }
 
             while (keuze != 4)
@@ -108,7 +114,6 @@
                         return;
             }   }  
         }
-    }
-      
+    }  
 }
     
