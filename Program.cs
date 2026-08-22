@@ -2,29 +2,34 @@
 {
     internal class Program
     {
-        public static int LeesGetal ()
+        public static int LeesGetal()
         {
-            try
-            {
-                int getal = int.Parse(Console.ReadLine());
-                return getal;
-
-            }
-            catch (FormatException)
-
-            {
-                Console.WriteLine("Ongeldige invoer. Voer een geldig getal in.");
-                return 0;
-            }
-            
 
             
+
+            while (true)
+            {
+
+                try
+                {
+                    int getal = int.Parse(Console.ReadLine());
+                    return getal;
+
+                }
+                catch (FormatException)
+
+                {
+                    Console.WriteLine("Ongeldige invoer. Voer een geldig getal in.");
+                    
+                }
+
+
+            }
 
         }
         static void Main(string[] args)
         {
             int keuze = 0;
-            bool geldigeInvoer = false;
 
 
             Bankrekening bankrekening = new Bankrekening();
@@ -35,26 +40,15 @@
 
             Console.WriteLine("Wat is je beginsaldo?");
 
-            while (!geldigeInvoer)
+            do
             {
-                try
-
-                {
-                    bankrekening.saldo = int.Parse(Console.ReadLine());
-                    geldigeInvoer = true;
-                }
-                catch (FormatException)
-                {
-                    Console.WriteLine("Ongeldige invoer. Voer een geldig getal in.");
-                    continue;
-                }
+                bankrekening.saldo = LeesGetal();
 
                 if (bankrekening.saldo < 0)
                 {
                     Console.WriteLine("Ongeldig bedrag. Voer een bedrag van 0 of hoger in.");
-                    geldigeInvoer = false;
                 }
-            }
+            } while (bankrekening.saldo < 0);
 
             while (keuze != 4)
             {
@@ -77,45 +71,26 @@
                 switch (keuze)
                 {
                     case 1:
-                        Console.WriteLine("Hallo, " + bankrekening.naam + "! Je saldo is: " + bankrekening.saldo); ;
+                        Console.WriteLine("Hallo, " + bankrekening.naam + "! Je saldo is: " + bankrekening.saldo);
                         
                         break;
+
                     case 2:
                         Console.WriteLine("Hoeveel wil je storten op je saldo?");
 
-                        
-                        try
-                        {
-                            int storting = int.Parse(Console.ReadLine());
-                            bankrekening.Storten(storting);
+                        int storting = LeesGetal();
+                        bankrekening.Storten(storting);
                             break;
-                        }
 
-                        catch (FormatException)
-                        {
-                            Console.WriteLine("Ongeldige invoer. Voer een geldig getal in.");
-                            continue;
-                        }
-                        
                     case 3:
                         Console.WriteLine("Hoeveel wil je opnemen?");
 
-
-                        try
-                        {
-                            int opname = int.Parse(Console.ReadLine());
+                            int opname = LeesGetal();
                             bankrekening.Opnemen(opname);
                             break;
 
-                        }
-
-                        catch (FormatException)
-                        {
-                            Console.WriteLine("Ongeldige invoer. Voer een geldig getal in.");
-                            continue;
-                        }
-
                     default:
+
                         Console.WriteLine("Ongeldige keuze, probeer het opnieuw.");
                         break;
 

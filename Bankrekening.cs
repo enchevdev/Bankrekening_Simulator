@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Bankrekening_Simulator
+﻿namespace Bankrekening_Simulator
 {
     internal class Bankrekening
     {
@@ -14,13 +10,13 @@ namespace Bankrekening_Simulator
         {
             if (bedrag <= 0)
             {
-                    
+
                 Console.WriteLine("Ongeldig bedrag. Voer een positief getal in.");
                 return;
             }
             saldo += bedrag;
 
-          
+
         }
 
         public void Opnemen(int bedrag)
@@ -35,15 +31,15 @@ namespace Bankrekening_Simulator
             if (saldo >= bedrag)
             {
                 saldo -= bedrag;
-                
-             Console.WriteLine("Je hebt " + saldo + " euro op je rekening.");
-                
+
+                Console.WriteLine("Je hebt " + saldo + " euro op je rekening.");
+
             }
+
             else
             {
                 Console.WriteLine("Je hebt niet genoeg geld op je rekening.");
             }
-
         }
     }
 }
