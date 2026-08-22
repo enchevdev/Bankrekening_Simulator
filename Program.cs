@@ -2,11 +2,30 @@
 {
     internal class Program
     {
+        public static int LeesGetal ()
+        {
+            try
+            {
+                int getal = int.Parse(Console.ReadLine());
+                return getal;
 
+            }
+            catch (FormatException)
+
+            {
+                Console.WriteLine("Ongeldige invoer. Voer een geldig getal in.");
+                return 0;
+            }
+            
+
+            
+
+        }
         static void Main(string[] args)
         {
             int keuze = 0;
             bool geldigeInvoer = false;
+
 
             Bankrekening bankrekening = new Bankrekening();
 
@@ -51,17 +70,8 @@
 
                     Console.WriteLine("4. Stoppen");
 
-                try
-                {
-                    keuze = int.Parse(Console.ReadLine());
-
-                }
-                catch (FormatException)
-
-                {
-                    Console.WriteLine("Ongeldige invoer. Voer een geldig getal in.");
-                    continue;
-                }
+                keuze = LeesGetal();
+               
       
 
                 switch (keuze)
@@ -116,4 +126,3 @@
         }
     }  
 }
-    
